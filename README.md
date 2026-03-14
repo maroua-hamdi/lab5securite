@@ -97,23 +97,17 @@ La méthode appelée par `MainActivity` appartient à un objet qui, dans le writ
 
 ![Interface](image3.jpg.png)
 
-Le code Java de `CodeCheck` montre :
+javapackage sg.vantagepoint.uncrackable2;
 
-```java
+/* JADX INFO: loaded from: classes.dex */
 public class CodeCheck {
-    static {
-        System.loadLibrary("foo");
-    }
+    private native boolean bar(byte[] bArr);
 
-    private native boolean bar(byte[] arr);
-
-    public boolean a(String s) {
-        return bar(s.getBytes());
+    public boolean a(String str) {
+        return bar(str.getBytes());
     }
 }
-```
-
-**Explication :** Le mot-clé `native` signifie que la méthode n'est pas implémentée en Java. Son code se trouve dans une bibliothèque compilée, généralement en C ou C++.
+Explication : Le mot-clé native signifie que la méthode bar() n'est pas implémentée en Java. Son code se trouve dans une bibliothèque compilée (libfoo.so), généralement en C ou C++. La méthode a() sert de pont entre le code Java et le code natif.
 
 ---
 
