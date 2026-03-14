@@ -142,7 +142,7 @@ L'APK contient plusieurs variantes de la bibliothèque selon l'architecture, par
 
 >  **Capture 4 — Dossier lib/arm64-v8a contenant libfoo.so**
 
-![Interface](image4.jpg.png)
+![Interface](image4.jpg.jpeg)
 
 *Le fichier `libfoo.so` est visible dans le dossier `lib/arm64-v8a`.*
 
@@ -206,7 +206,7 @@ La fonction `bar` compare l'entrée utilisateur à une autre chaîne en utilisan
 
 >  **Capture 5 — Fonction JNI Java_sg_vantagepoint_uncrackable2_CodeCheck_bar dans Ghidra**
 
-![Interface](image5.jpg.png)
+![Interface](image5.jpg.jpeg)
 
 *Le pseudo-code Ghidra montre la comparaison avec `strncmp` et la chaîne secrète `"Thanks for all the fish"` stockée en dur dans la bibliothèque native (ligne 17).*
 
