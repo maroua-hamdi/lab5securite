@@ -28,7 +28,7 @@ Lancer ensuite l'application sur l'émulateur ou l'appareil.
 
 L'application affiche une interface simple avec un champ de saisie et un mécanisme de validation. Le challenge repose sur l'idée de saisir la bonne chaîne dans le champ texte.
 
-> 📸 **Capture 1 — Interface de l'application (champ de saisie)**
+>  **Capture 1 — Interface de l'application (champ de saisie)**
 
 
 
