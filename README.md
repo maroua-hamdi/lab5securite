@@ -30,7 +30,7 @@ L'application affiche une interface simple avec un champ de saisie et un mécani
 
 >  **Capture 1 — Interface de l'application (champ de saisie)**
 
-
+![Interface](capture1.jpg)
 
 *L'application affiche un champ texte avec un bouton VERIFY. Ici, une valeur incorrecte est saisie.*
 
