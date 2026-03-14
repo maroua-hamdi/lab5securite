@@ -46,9 +46,9 @@ Saisir une valeur incorrecte pour observer la réaction de l'application.
 
 Une mauvaise valeur provoque l'affichage d'un message d'erreur.
 
-> 📸 **Capture 2 — Message d'erreur après une mauvaise saisie**
+> **Capture 2 — Message d'erreur après une mauvaise saisie**
 
-![Message d'erreur — Nope](./captures/capture_nope.png)
+![Interface](image2.jpg.png)
 
 *L'application affiche "Nope... That's not it. Try again." pour toute valeur incorrecte.*
 
@@ -95,7 +95,9 @@ La méthode appelée par `MainActivity` appartient à un objet qui, dans le writ
 
 > **Note :** Dans cette version de l'APK, `System.loadLibrary("foo")` se trouve dans `MainActivity` et non dans `CodeCheck`.
 
-> 📸 **Capture 3 — Classe CodeCheck ouverte dans JADX**
+>  **Capture 3 — Classe CodeCheck ouverte dans JADX**
+
+![Interface](image3.jpg.png)
 
 Le code Java réel de `CodeCheck` (package `sg.vantagepoint.uncrackable2`) :
 
@@ -138,9 +140,9 @@ ls -R uncrackable_l2/lib
 
 L'APK contient plusieurs variantes de la bibliothèque selon l'architecture, par exemple `x86` ou `ARM`.
 
-> 📸 **Capture 4 — Dossier lib/arm64-v8a contenant libfoo.so**
+>  **Capture 4 — Dossier lib/arm64-v8a contenant libfoo.so**
 
-![Dossier arm64-v8a avec libfoo.so](./captures/capture_libfoo.png)
+![Interface](image4.jpg.png)
 
 *Le fichier `libfoo.so` est visible dans le dossier `lib/arm64-v8a`.*
 
@@ -202,9 +204,9 @@ Afficher le pseudo-code dans Ghidra et chercher les appels à `strncmp`.
 
 La fonction `bar` compare l'entrée utilisateur à une autre chaîne en utilisant `strncmp`.
 
-> 📸 **Capture 5 — Fonction JNI Java_sg_vantagepoint_uncrackable2_CodeCheck_bar dans Ghidra**
+>  **Capture 5 — Fonction JNI Java_sg_vantagepoint_uncrackable2_CodeCheck_bar dans Ghidra**
 
-![Ghidra — fonction CodeCheck_bar](./captures/capture_ghidra_function.png)
+![Interface](image5.jpg.png)
 
 *Le pseudo-code Ghidra montre la comparaison avec `strncmp` et la chaîne secrète `"Thanks for all the fish"` stockée en dur dans la bibliothèque native (ligne 17).*
 
@@ -278,9 +280,9 @@ Thanks for all the fish
 
 Le write-up confirme que cette chaîne est acceptée par l'application.
 
-> 📸 **Capture 6 — Validation réussie : "Success! This is the correct secret."**
+>  **Capture 6 — Validation réussie : "Success! This is the correct secret."**
 
-![Succès — Thanks for all the fish](./captures/capture_success.png)
+![Interface](image6.jpg.png)
 
 *L'application affiche "Success! This is the correct secret." confirmant que le secret a bien été retrouvé.*
 
