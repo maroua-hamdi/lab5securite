@@ -32,7 +32,7 @@ L'application affiche une interface simple avec un champ de saisie et un mécani
 
 ![Interface](image1.jpg)
 
-*L'application affiche un champ texte avec un bouton VERIFY. Ici, une valeur incorrecte est saisie.*
+*L'application affiche un champ texte avec un bouton VERIFY. Ici, une valeur incorrecte ("asd") est saisie.*
 
 **Checkpoint :** À la fin de cette étape, l'application est installée et l'interface est visible.
 
@@ -46,9 +46,9 @@ Saisir une valeur incorrecte pour observer la réaction de l'application.
 
 Une mauvaise valeur provoque l'affichage d'un message d'erreur.
 
->  **Capture 2 — Message d'erreur après une mauvaise saisie**
+> 📸 **Capture 2 — Message d'erreur après une mauvaise saisie**
 
-![Interface](image2.jpg.png)
+![Message d'erreur — Nope](./captures/capture_nope.png)
 
 *L'application affiche "Nope... That's not it. Try again." pour toute valeur incorrecte.*
 
@@ -90,14 +90,17 @@ La méthode appelée par `MainActivity` appartient à un objet qui, dans le writ
 
 **Ce qu'il faut observer :**
 
-- Un appel à `System.loadLibrary("foo")`
 - Une méthode déclarée `native`, nommée `bar`
+- Une méthode publique `a(String str)` qui convertit la chaîne en bytes et appelle `bar()`
 
->  **Capture 3 — Classe CodeCheck ouverte dans JADX**
+> **Note :** Dans cette version de l'APK, `System.loadLibrary("foo")` se trouve dans `MainActivity` et non dans `CodeCheck`.
 
-![Interface](image3.jpg.png)
+> 📸 **Capture 3 — Classe CodeCheck ouverte dans JADX**
 
-javapackage sg.vantagepoint.uncrackable2;
+Le code Java réel de `CodeCheck` (package `sg.vantagepoint.uncrackable2`) :
+
+```java
+package sg.vantagepoint.uncrackable2;
 
 /* JADX INFO: loaded from: classes.dex */
 public class CodeCheck {
@@ -107,7 +110,9 @@ public class CodeCheck {
         return bar(str.getBytes());
     }
 }
-Explication : Le mot-clé native signifie que la méthode bar() n'est pas implémentée en Java. Son code se trouve dans une bibliothèque compilée (libfoo.so), généralement en C ou C++. La méthode a() sert de pont entre le code Java et le code natif.
+```
+
+**Explication :** Le mot-clé `native` signifie que la méthode `bar()` n'est pas implémentée en Java. Son code se trouve dans une bibliothèque compilée (`libfoo.so`), généralement en C ou C++. La méthode `a()` sert de pont entre le code Java et le code natif.
 
 ---
 
@@ -115,7 +120,7 @@ Explication : Le mot-clé native signifie que la méthode bar() n'est pas implé
 
 ### Étape 6 — Extraire le contenu de l'APK
 
-L'appel `System.loadLibrary("foo")` indique qu'un fichier nommé `libfoo.so` doit exister dans l'APK.
+Le `System.loadLibrary("foo")` présent dans `MainActivity` indique qu'un fichier nommé `libfoo.so` doit exister dans l'APK.
 
 **Action :**
 
