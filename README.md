@@ -93,7 +93,9 @@ La méthode appelée par `MainActivity` appartient à un objet qui, dans le writ
 - Un appel à `System.loadLibrary("foo")`
 - Une méthode déclarée `native`, nommée `bar`
 
-> 📸 **Capture 3 — Classe CodeCheck ouverte dans JADX**
+>  **Capture 3 — Classe CodeCheck ouverte dans JADX**
+
+![Interface](image3.jpg.png)
 
 Le code Java de `CodeCheck` montre :
 
