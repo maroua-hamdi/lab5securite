@@ -46,9 +46,9 @@ Saisir une valeur incorrecte pour observer la réaction de l'application.
 
 Une mauvaise valeur provoque l'affichage d'un message d'erreur.
 
-> 📸 **Capture 2 — Message d'erreur après une mauvaise saisie**
+>  **Capture 2 — Message d'erreur après une mauvaise saisie**
 
-![Message d'erreur — Nope](./captures/capture_nope.png)
+![Interface](image2.jpg.png)
 
 *L'application affiche "Nope... That's not it. Try again." pour toute valeur incorrecte.*
 
